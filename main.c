@@ -20,7 +20,6 @@ struct Result{
     float tauxOccCPU;
 };
 
-//Prototypes
 /**
  * @brief Menu permettant de choisir l'ALGORITHME d'ordonnancement
  * @return int
@@ -129,7 +128,6 @@ int main(int argc, char *argv[]){
     }
     else
         nombre = lireFichier(fichierTest,processus);
-    
     //initialisation data
     Result resultat;
     resultat.tauxOccCPU = 0.0;
@@ -330,6 +328,7 @@ int lireFichier(FILE* file,Processus p[TAILLE_MAX]){
 void enregister(Result resultat,Processus process[TAILLE_MAX], int n){
     FILE* f = fopen("resultat.xsl", "w");
 	if(f == NULL) {
+		printf("Error de fichier\n");
 		exit (1);
 	}
     fprintf(f, "CPU\tE/S\tAttente\tReponse\tRestitution\n");
